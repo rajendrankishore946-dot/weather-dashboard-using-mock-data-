@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard - Your Personal Weather App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Main container for the entire application -->
+    <div class="container">
+        <!-- Header section with title and description -->
+        <header class="header">
+            <h1>🌤️ Weather Dashboard</h1>
+            <p>Get real-time weather information for your city</p>
+        </header>
+
+        <!-- Main weather card container -->
+        <main class="main-content">
+            <!-- Search section with input and button -->
+            <section class="search-section">
+                <div class="search-box">
+                    <input 
+                        type="text" 
+                        id="cityInput" 
+                        class="city-input" 
+                        placeholder="Enter city name (e.g., Chennai, Mumbai)..."
+                        aria-label="Enter city name"
+                        autocomplete="off"
+                    >
+                    <button 
+                        id="searchBtn" 
+                        class="search-btn" 
+                        aria-label="Search weather"
+                    >
+                        Search
+                    </button>
+                </div>
+                <!-- Error message display area -->
+                <div id="errorMessage" class="error-message" aria-live="polite" aria-atomic="true"></div>
+            </section>
+
+            <!-- Weather card that displays weather information -->
+            <section id="weatherCard" class="weather-card hidden">
+                <!-- City name and date -->
+                <div class="weather-header">
+                    <h2 id="cityName" class="city-name"></h2>
+                    <p id="currentDate" class="current-date"></p>
+                </div>
+
+                <!-- Weather condition with icon -->
+                <div class="weather-condition">
+                    <span id="weatherIcon" class="weather-icon">🌤️</span>
+                    <span id="weatherCondition" class="condition-text"></span>
+                </div>
+
+                <!-- Main temperature display -->
+                <div class="temperature-display">
+                    <span id="temperature" class="temp-value"></span>
+                    <span class="temp-unit">°C</span>
+                </div>
+
+                <!-- Feels like temperature -->
+                <div class="feels-like">
+                    <p id="feelsLike" class="feels-like-text"></p>
+                </div>
+
+                <!-- Additional weather metrics in a grid -->
+                <div class="weather-details-grid">
+                    <div class="detail-item">
+                        <span class="detail-icon">💧</span>
+                        <div>
+                            <p class="detail-label">Humidity</p>
+                            <p id="humidity" class="detail-value"></p>
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-icon">💨</span>
+                        <div>
+                            <p class="detail-label">Wind Speed</p>
+                            <p id="windSpeed" class="detail-value"></p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Loading spinner (shown during search) -->
+            <div id="loadingSpinner" class="loading-spinner hidden" aria-label="Loading weather data">
+                <div class="spinner"></div>
+            </div>
+
+            <!-- Search history section -->
+            <section class="search-history-section">
+                <h3>Recent Searches</h3>
+                <div id="searchHistory" class="search-history" aria-label="Recent search history">
+                    <!-- Recent searches will be added here dynamically -->
+                </div>
+            </section>
+
+            <!-- Suggested cities section -->
+            <section class="suggestions-section">
+                <h3>Popular Cities</h3>
+                <div id="suggestions" class="suggestions-list" aria-label="Popular cities suggestions">
+                    <!-- Suggestions will be added here dynamically -->
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer with copyright information -->
+        <footer class="footer">
+            <p>&copy; 2026 Weather Dashboard. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <!-- JavaScript file link -->
+    <script src="script.js"></script>
+</body>
+</html>
